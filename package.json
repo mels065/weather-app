@@ -1,0 +1,11 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A web application to displaying the local weather",
+  "main": "./src/api/index.js",
+  "scripts": {
+    "test": "echo 'Currently no test'"
+  },
+  "author": "Brandon Mellus",
+  "license": "ISC"
+}
