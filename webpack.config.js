@@ -17,7 +17,7 @@ function setDevTool() {
 }
 
 const config = {
-  entry: ['@babel/polyfill', './src/client/index.js'],
+  entry: ['@babel/polyfill', './src/client/index.jsx'],
   output: {
     filename: 'index.js',
     path: `${__dirname}/dist`,
@@ -26,7 +26,7 @@ const config = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /app.js|node_modules|src\/api/,
+        exclude: /node_modules|src\/api/,
         use: 'babel-loader',
       },
       {
