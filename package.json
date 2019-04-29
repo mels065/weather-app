@@ -6,7 +6,7 @@
   "scripts": {
     "start:api": "node src/api",
     "start:client": "webpack-dev-server --mode development --history-api-fallback --inline --progress --open",
-    "test": "echo 'Currently no test'",
+    "test:unit": "jest test/unit --watch",
     "test:unit:client": "jest test/unit/client --watch"
   },
   "author": "Brandon Mellus",
