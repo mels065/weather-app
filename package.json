@@ -6,8 +6,14 @@
   "scripts": {
     "start:api": "node src/api",
     "start:client": "webpack-dev-server --mode development --history-api-fallback --inline --progress --open",
-    "test:unit": "jest test/unit --watch",
-    "test:unit:client": "jest test/unit/client --watch"
+    "test:unit": "jest ./test/unit",
+    "test:unit:client": "jest ./test/unit/client"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(scss|css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "author": "Brandon Mellus",
   "license": "ISC",
@@ -41,6 +47,7 @@
     "jest-dom": "^3.1.3",
     "jest-transform-css": "^2.0.0",
     "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
     "react-testing-library": "^7.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",

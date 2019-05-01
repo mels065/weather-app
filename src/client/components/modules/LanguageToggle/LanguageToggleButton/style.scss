@@ -1,0 +1,9 @@
+.language-toggle-btn {
+  border: none;
+  outline: none;
+  height: 25px;
+  width: 25px;
+  &:hover {
+    cursor: pointer;
+  }
+}

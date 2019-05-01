@@ -1,3 +1,4 @@
 node_modules/
 gameplan.txt
 .env
+npm-debug.log

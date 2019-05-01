@@ -19,8 +19,8 @@ function setDevTool() {
 const config = {
   entry: ['@babel/polyfill', './src/client/index.jsx'],
   output: {
-    filename: 'index.js',
-    path: `${__dirname}/dist`,
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, './dist'),
   },
   module: {
     rules: [
@@ -63,7 +63,9 @@ const config = {
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, '/src/client/public'),
+    contentBase: path.join(__dirname, './src/client/public'),
+    watchContentBase: true,
+    compress: true,
     historyApiFallback: true,
     port: process.env.CLIENT_PORT || 5000,
     proxy: {
