@@ -3,7 +3,7 @@ import { render, fireEvent, cleanup } from 'react-testing-library';
 
 import 'jest-dom/extend-expect';
 
-import LanguageToggleButton from '../../../../../../src/client/components/modules/LanguageToggle/Button';
+import LanguageToggleButton from '../../../../../../src/client/components/modules/LanguageToggle/LanguageToggleButton';
 
 jest.mock('../../../../../../src/client/components/context/LanguageToggleContext');
 
@@ -37,5 +37,19 @@ describe('<LanguageToggleButton />', () => {
       />
     )
     expect(queryByTestId('language-toggle-btn')).toBeDisabled();
+  });
+
+  it('should fire `onClick` event when clicked', () => {
+    const fn = jest.fn();
+    const { queryByTestId } = render(
+      <LanguageToggleButton
+        onClick={fn}
+        icon="japan-flag.svg"
+        lang="日本語"
+      />
+    );
+
+    fireEvent.click(queryByTestId('language-toggle-btn'));
+    expect(fn.mock.calls.length).toBe(1);
   });
 });
