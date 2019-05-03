@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 
 const LanguageToggleContext = React.createContext();
 
+export const changeToAmericanEnglish = jest.mock();
+export const changeToJapanese = jest.mock();
+
 export class LanguageToggleProvider extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       lang: 'American English',
-      changeToAmericanEnglish: jest.mock(),
-      changeToJapanese: jest.mock(),
+      changeToAmericanEnglish,
+      changeToJapanese,
     };
   }
 
